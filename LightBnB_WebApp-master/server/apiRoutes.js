@@ -17,6 +17,7 @@ module.exports = function(router, database) {
     }
     database.getAllReservations(userId)
     .then(reservations => res.send({reservations}))
+    
     .catch(e => {
       console.error(e);
       res.send(e)
