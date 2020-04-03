@@ -31,6 +31,10 @@ app.use('/users', userRouter);
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get("/test", (req, res) => {
+  database.getUserWithEmail('emilyhammond@live.com')
+  .then(rows => {
+    console.log(rows);
+  })
   res.send("🤗");
 });
 
